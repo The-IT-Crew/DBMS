@@ -13,7 +13,7 @@ A Database side project written in C++
   <tbody>
     <tr>
       <td>main</td>
-      <td>Main development Branch. Accept merges from topic/</td>
+      <td>Main development Branch. Accept merges from topic</td>
     </tr>
     <tr>
       <td>stable</td>
