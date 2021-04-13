@@ -17,20 +17,22 @@ struct node* getnode();
 struct node *create();
 
 // Query Handler
-void query_driver(){
+void query_handler(){
     string query;
     size_t found;
-    cin >> query; // create table student (NAME(STRING),ROLL(INTEGER),MARK(INTEGER))
+    //cin >> query; // create table student (NAME(STRING),ROLL(INTEGER),MARK(INTEGER))
     query = "create table student (NAME(STRING),ROLL(INTEGER),MARK(INTEGER))";
     while(true){
         found = query.find_first_of("(),");
         cout << found << endl;
+        cout << query << endl;
         if(found != string::npos){
             query[found] = ' '; // Replace (), with space
         }
         else
             break;
     }
+
     string tmp; // A string to store the word on each iteration.
     stringstream str_strm;
     str_strm << query;
@@ -47,8 +49,6 @@ void query_driver(){
     }
     for(int i = 0; i<words.size(); i++)
         cout << words[i] << endl;
-    cout << query;
-
 }
 
 /*----------functions-----------*/
@@ -82,6 +82,6 @@ struct node *create(){
 /*----------driving code----------*/
 int main(){
 	// driving code
-    query_driver();
+    query_handler();
 	return 0;
 }
