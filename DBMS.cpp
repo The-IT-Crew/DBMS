@@ -1,4 +1,3 @@
-// DO NOT TOUCH THIS FILE :)
 
 #include<iostream>
 #include<cstdlib>
@@ -20,10 +19,18 @@ struct node *create();
 // Query Handler
 void query_driver(){
     string query;
+    size_t found;
     cin >> query; // create table student (NAME(STRING),ROLL(INTEGER),MARK(INTEGER))
     query = "create table student (NAME(STRING),ROLL(INTEGER),MARK(INTEGER))";
-    size_t found = query.find('(');
-    cout << found;
+    while(true){
+        found = query.find_first_of("(),");
+        cout << found << endl;
+        if(found != string::npos){
+            query[found] = ' '; // Replace (), with space
+        }
+        else
+            break;
+    }
     string tmp; // A string to store the word on each iteration.
     stringstream str_strm;
     str_strm << query;
