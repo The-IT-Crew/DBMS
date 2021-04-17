@@ -49,6 +49,11 @@ void query_handler(){
     }
     for(int i = 0; i<words.size(); i++)
         cout << words[i] << endl;
+    
+    //check command
+    if(words[0] == "create"){
+        cout << "hola";
+    }
 }
 
 /*----------functions-----------*/
