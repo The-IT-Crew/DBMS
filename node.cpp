@@ -10,6 +10,12 @@ struct node{
 	struct node *link;
 }*head=NULL,*ptr,*temp;
 
+struct header
+{
+	string attr_name;
+	struct header* next;
+};
+
 struct node* getnode(string name, int roll, int mark){
 	struct node *temp=(struct node*)malloc(sizeof(struct node));
 	temp->name=name;
