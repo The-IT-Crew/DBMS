@@ -31,4 +31,11 @@ void create(string name, int roll, int mark){
 	    ptr->link=NULL;
     }
 }
+void display_link(){
+	ptr = head;
+	while(ptr!=NULL){
+		cout<<ptr->name<<endl;
+		ptr = ptr->link;
+	}
+}
 
