@@ -16,6 +16,22 @@ struct header
 	struct header* next;
 };
 
+
+struct header* createHeader(string attr1, string attr2, string attr3)
+{
+	struct header *head, *ptr, *temp1, *temp2, *temp3;
+	temp1=(struct header*)malloc(sizeof(struct header));
+	temp1->attr_name=attr1;
+	head=temp1;
+	temp2->attr_name=attr2;
+	temp3->attr_name=attr3;
+	temp1->next=temp2;
+	temp2->next=temp3;
+	temp3->next=NULL;
+
+	return(head);
+}
+
 struct node* getnode(string name, int roll, int mark){
 	struct node *temp=(struct node*)malloc(sizeof(struct node));
 	temp->name=name;
