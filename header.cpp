@@ -24,6 +24,7 @@ struct Header* createHeader(string a1, string a2, string a3)
         ptr3->next=nullptr;
 
         struct Header *head;
+        head=ptr1;
         return(head);
 }
 
@@ -36,6 +37,7 @@ void showHeader(struct Header *head)
     {
         cout<<ptr->attribute_name;
         cout<<"\n";
+        ptr=ptr->next;
     }
 }
 
@@ -51,6 +53,7 @@ void setPrimaryKey(struct Header *ptr, string at_name)
             p->attribute_name=at_name+"key";
             break;
         }
+        p=p->next;
     }
 
     cout<<at_name<<" is set as the primary key";
