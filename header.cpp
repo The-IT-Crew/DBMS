@@ -41,7 +41,7 @@ void showHeader(struct Header *head)
     }
 }
 
-void setPrimaryKey(struct Header *ptr, string at_name)
+struct Header* setPrimaryKey(struct Header *ptr, string at_name)
 {
     struct Header *p;
     p=ptr;
@@ -57,14 +57,15 @@ void setPrimaryKey(struct Header *ptr, string at_name)
     }
 
     cout<<at_name<<" is set as the primary key";
+    return(p);
 }
 
-int main()
-{
-    struct Header *ptr;
-    ptr=createHeader("NAME", "ROLL", "MARKS");
-    showHeader(ptr);
+//int main()
+//{
+//   struct Header *ptr;
+//    ptr=createHeader("NAME", "ROLL", "MARKS");
+//    showHeader(ptr);
 
-    return(0);
-}
+//    return(0);
+//}
 
