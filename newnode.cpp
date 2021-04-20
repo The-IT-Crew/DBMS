@@ -10,7 +10,8 @@ struct node
 	struct node *link;
 };
 
-struct node* getnode(string name, int roll, int mark){
+struct node* getnode( string name, int roll, int mark){
+	fflush(stdin);
 	struct node *temp=(struct node*)malloc(sizeof(struct node));
 	temp->name=name;
 	temp->roll=roll;
@@ -18,20 +19,31 @@ struct node* getnode(string name, int roll, int mark){
 	return temp;
 }
 
-struct node* createNode(string name, int roll, int mark)
+struct node* createNode(struct node *head, string name, int roll, int mark)
 {
-    struct node *head, *ptr, *temp;
-    head=nullptr;
+    struct node  *ptr, *temp;
+    //head=nullptr;
     temp=getnode(name, roll, mark);
      if(head==NULL){
 	    	head=temp;
 	    	ptr=temp;
+	    	ptr->link=nullptr;
 	    }
 	    else{
-	    	ptr->link=temp;
-	    	ptr=ptr->link;
+	    	struct node* p;
+	    	p=head;
+
+	    	while(p->link!=nullptr)
+            {
+                p=p->link;
+
+            }
+            p->link=temp;
+            p=p->link;
+            p->link=nullptr;
+
 	    }
-	    ptr->link=NULL;
+	    //ptr->link=NULL;
 
 	    return head;
 }
@@ -52,11 +64,14 @@ void show_data(struct node *p)
 
 int main()
 {
-    struct node *ptr;
-    struct node *p;
-    ptr=createNode("Sayan", 7,94);
+    struct node  *head=nullptr;
 
-    show_data(ptr);
+    head=createNode(head, "Sayan", 1, 91);
+    head=createNode(head, "Suva", 2, 95);
+    head=createNode(head, "manas", 3, 100);
+
+
+    show_data(head);
 
     return 0;
 }
