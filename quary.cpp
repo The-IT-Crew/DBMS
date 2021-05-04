@@ -1,5 +1,8 @@
 #include<iostream>
 #include<string>
+#include<stdlib.h>
+
+#include "header.hpp"
 
 using namespace std;
 
@@ -7,6 +10,7 @@ class Table{
     private:
         std::string table_name;
         std::string key;
+        struct Header *header=NULL;
 
         std::string user_input();
         std::string word1(std::string str);
@@ -15,6 +19,12 @@ class Table{
         
     public:
         void user_command();
+        
+        // constractor
+        Table(){
+            table_name = "mydatabase";
+            header = NULL;
+        }
 };
 
 string Table :: user_input(){
@@ -52,6 +62,13 @@ void Table :: user_input_create(string str){
     else{
         cout<<"wrong command given"<<endl;
     }
+
+    
+
+    //header = createHeader(header, "Name");
+    //header = createHeader(header, "Roll");
+    //header = createHeader(header, "Mark");
+    //show_data(header);
 }
 
 // user input for primary key
@@ -84,6 +101,7 @@ void Table :: user_input_primary(string str){
 
 void Table :: user_command(){
     string str=user_input();
+
     if(word1(str)=="create"){
         user_input_create(str);
     }
