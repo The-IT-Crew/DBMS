@@ -4,6 +4,6 @@
 
 int main(){
 	// driving code
-    query_driver();
+    // main code
 	return 0;
 }

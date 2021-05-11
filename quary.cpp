@@ -2,7 +2,7 @@
 #include<string>
 #include<stdlib.h>
 
-#include "header.hpp"
+#include "header.h"
 
 using namespace std;
 
@@ -27,78 +27,77 @@ class Table{
         }
 };
 
+
 string Table :: user_input(){
+    // status: working
+    // taking the command string form user
+    // store the string in str
+    
     string str;
     char c;
     do{
         c = getchar();
-        str += c;
+        str.push_back(c);
     }while(c!='\n');
     return str;
 }
 
 string Table :: word1(string str){
+    // status: working
+    // fetch 1st word from user input
+    // return the 1st word as string
     string str1;
-    for(int i=0; str[i]!=' '; i++)
-        str1 += str[i];
+    int i=0;
+    while(str[i]!=' '){
+        str1.push_back(str[i]);
+        i++;
+    }
     return str1;
 }
 
 // user input for create table
 void Table :: user_input_create(string str){
-    int i, count=0;
-    string table_name, temp;
-    for(i=0 ; count<2; i++){
-        temp.push_back(str[i]);
-        if(str[i]==' ') count++;
-    }
-    if(temp == "create table "){
-        do{
+    /*
+    int count1=0,count2=0, a=0;
+    string table_name, str_array[3], st="";
+    for(int i=13; i<str.length()-1; i++){
+        if(count1<1){    // table name
             table_name.push_back(str[i]);
-            i++;
-        }while(str[i]!=' ');
-        cout<<"Table name is : "<<table_name;
-    }
-    else{
-        cout<<"wrong command given"<<endl;
-    }
-
-    
-
-    //header = createHeader(header, "Name");
-    //header = createHeader(header, "Roll");
-    //header = createHeader(header, "Mark");
-    //show_data(header);
-}
-
-// user input for primary key
-void Table :: user_input_primary(string str){
-    int i, count=0;
-    string str1, temp, _table_name;
-    for(i=0 ; count<3; i++){
-        temp.push_back(str[i]);
-        if(str[i]==' ') count++;
-    }
-    if(temp == "primary key of "){
-        temp = "";
-        for(; str[i]!=' '; i++)
-            _table_name.push_back(str[i]);
-        if(_table_name == table_name){
-            for(; str[i]!='('; i++)
-                temp.push_back(str[i]);
-            if(temp == "table is "){
-                for(; str[i]!=')'; i++)
-                    key.push_back(str[i]);
+            if(str[i]==' '){
+                count1++;
+                i++;
             }
-            else cout<<"wrong command given"<<endl;
         }
-        else cout<<"wrong command given"<<endl;
+        else{
+            if(count2<1){
+                if(str[i]!=','){
+                    st.push_back(str[i]);
+                    if(str[i]=='(') count2++;
+                }
+            }
+            else{
+                if(str[i]==')'){
+                    if(str[i+1]!=')') count2--;
+                }
+                str_array[a++] = st;
+                st = "";
+            }
+        }
+    }*/
+    header = createHeader(header, "Name");
+    header = createHeader(header, "Roll");
+    header = createHeader(header, "Mark");
+    show_data(header);
+    /*
+    for(int j=0; j<3; j++){
+        cout<<"Test: "<<str_array[j]<<endl;
     }
-    else cout<<"wrong command given"<<endl;
-    
-    cout<<"the key is: "<<key<<endl;
+    cout<<"Table name: "<<table_name<<endl;
+    */
 }
 
+
+// this function will call by external methods
 void Table :: user_command(){
     string str=user_input();
 
@@ -106,7 +105,7 @@ void Table :: user_command(){
         user_input_create(str);
     }
     if(word1(str)=="primary"){
-        user_input_primary(str);
+        //user_input_primary(str);
     }
     if(word1(str)=="insert"){/*code*/}
     if(word1(str)=="show"){/*code*/}
@@ -114,7 +113,6 @@ void Table :: user_command(){
 
 int main(){
     Table t;
-    t.user_command();
     t.user_command();
     return 0;
 }

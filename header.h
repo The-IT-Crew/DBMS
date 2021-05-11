@@ -1,6 +1,8 @@
 #include<string>
 using namespace std;
 
+int x=10;
+
 struct Header{
 	string atr_name;
 	struct Header *link;

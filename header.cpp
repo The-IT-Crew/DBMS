@@ -2,7 +2,7 @@
 #include<string>
 #include<stdlib.h>
 
-#include "header.hpp"
+#include "header.h"
 
 using namespace std;
 
