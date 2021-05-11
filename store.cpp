@@ -17,19 +17,6 @@ bool validation(string filename, int key){
     // if primary key is invalid then return flase
     ifstream _val(filename);
     string c;
-    /*
-    while(_val){
-        int b=0, flag=1;
-        getline(_val, c);
-        for(int i=20; i<25 && c[i]!=' '; i++){
-            b=(b*10)+(c[i]-48);
-        }
-        if(b==key){
-            return false;
-            break;
-        }
-    }*/
-
     while(_val){
         int i, b=0, count=0;
         getline(_val, c);
