@@ -2,14 +2,17 @@
 #include<string>
 #include<stdlib.h>
 
-#include "header.h"
-
 using namespace std;
 
-//struct Header{
-//	string atr_name;
-//	struct Header *link;
-//};
+struct Header{
+	string atr_name;
+	struct Header *link;
+};
+
+void show(){
+    cout<<"hello world"<<endl;
+}
+
 
 struct Header* createHeader(struct Header* head, string at_name){
 	struct Header *temp;

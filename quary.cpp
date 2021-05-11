@@ -2,7 +2,7 @@
 #include<string>
 #include<stdlib.h>
 
-#include "header.h"
+#include "header.hpp"
 
 using namespace std;
 
@@ -57,7 +57,7 @@ string Table :: word1(string str){
 
 // user input for create table
 void Table :: user_input_create(string str){
-    /*
+
     int count1=0,count2=0, a=0;
     string table_name, str_array[3], st="";
     for(int i=13; i<str.length()-1; i++){
@@ -83,17 +83,18 @@ void Table :: user_input_create(string str){
                 st = "";
             }
         }
-    }*/
-    header = createHeader(header, "Name");
-    header = createHeader(header, "Roll");
-    header = createHeader(header, "Mark");
-    show_data(header);
-    /*
+    }
+
     for(int j=0; j<3; j++){
         cout<<"Test: "<<str_array[j]<<endl;
     }
     cout<<"Table name: "<<table_name<<endl;
-    */
+
+   /*
+    header = createHeader(header, "Name");
+    header = createHeader(header, "Roll");
+    header = createHeader(header, "Mark");
+    show_data(header);*/
 }
 
 
@@ -107,8 +108,12 @@ void Table :: user_command(){
     if(word1(str)=="primary"){
         //user_input_primary(str);
     }
-    if(word1(str)=="insert"){/*code*/}
-    if(word1(str)=="show"){/*code*/}
+    if(word1(str)=="insert"){
+        //user_input_insert();
+    }
+    if(word1(str)=="show"){
+        //user_input_show();
+    }
 }
 
 int main(){
