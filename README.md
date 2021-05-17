@@ -25,3 +25,6 @@ A Database side project written in C++
     </tr>
   </tbody>
 </table>
+
+## flow chart:
+![flow chart](https://github.com/The-IT-Crew/DBMS/blob/topic-suvasish/flowchart.png)
