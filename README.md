@@ -2,7 +2,7 @@
 A Database side project written in C++
 
 ## Repo structure:
-      
+
 <table>
   <thead>
     <tr>
@@ -25,3 +25,7 @@ A Database side project written in C++
     </tr>
   </tbody>
 </table>
+
+# Flow chart
+
+<img src="./flowchart.png"></img>
